@@ -1,21 +1,17 @@
 package com.persistence.entities.impl;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.persistence.entities.parents.EntityImpl;
+import com.persistence.entities.parents.BaseEntity;
 
 /**
  * @author RMehdi
@@ -23,13 +19,9 @@ import com.persistence.entities.parents.EntityImpl;
  */
 @Entity
 @Table(name = "record")
-public class RecordEntity extends EntityImpl {
+public class RecordEntity extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 
 	@Column(nullable = false)
 	private BigDecimal amount;
@@ -45,28 +37,25 @@ public class RecordEntity extends EntityImpl {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private AccountEntity account;
 
-	public RecordEntity() {
+	@SuppressWarnings("unused")
+	private RecordEntity() {
 	}
 
-	public RecordEntity(BigDecimal amount, BigDecimal balance, TransnationalType transnationalType,
-			String createdNameBy, String modifiedNameBy) {
-		super(createdNameBy, modifiedNameBy, new Date());
+	public RecordEntity(final String createdNameBy, final String modifiedNameBy, final BigDecimal amount,
+			final BigDecimal balance, final TransnationalType transnationalType) {
+		super(createdNameBy, modifiedNameBy);
 		this.amount = amount;
 		this.balance = balance;
 		this.transnationalType = transnationalType;
 	}
 
-	public RecordEntity(BigDecimal amount, BigDecimal balance, TransnationalType transnationalType,
-			AccountEntity account) {
+	public RecordEntity(final String modifiedNameBy, final BigDecimal amount, final BigDecimal balance,
+			final TransnationalType transnationalType, final AccountEntity account) {
+		super(modifiedNameBy);
 		this.amount = amount;
 		this.balance = balance;
 		this.transnationalType = transnationalType;
 		this.account = account;
-	}
-
-	@Override
-	public Long getId() {
-		return id;
 	}
 
 	public BigDecimal getAmount() {
@@ -84,15 +73,15 @@ public class RecordEntity extends EntityImpl {
 	public void setAccount(AccountEntity account) {
 		this.account = account;
 	}
-	
+
 	public BigDecimal getBalance() {
 		return balance;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("RecordEntity [id=%s, amount=%s, balance=%s, transnationalType=%s, account=%s]", id,
-				amount, balance, transnationalType, account);
+		return String.format("RecordEntity [amount=%s, balance=%s, transnationalType=%s, account=%s]", amount, balance,
+				transnationalType, account);
 	}
 
 }

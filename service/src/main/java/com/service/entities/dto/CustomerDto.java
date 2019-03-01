@@ -2,19 +2,31 @@ package com.service.entities.dto;
 
 public class CustomerDto {
 
+	private String id;
+
 	private String firstName;
 
 	private String lastName;
 
-	private String email;
-
 	private String modifiedBy;
 
-	public CustomerDto(String firstName, String lastName, String email, String modifiedBy) {
+	public CustomerDto(final String id, final String firstName, final String lastName, final String modifiedBy) {
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
 		this.modifiedBy = modifiedBy;
+	}
+
+	public CustomerDto(String firstName, String lastName, String modifiedBy) {
+		this(null, firstName, lastName, modifiedBy);
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -33,14 +45,6 @@ public class CustomerDto {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getModifiedBy() {
 		return modifiedBy;
 	}
@@ -51,7 +55,8 @@ public class CustomerDto {
 
 	@Override
 	public String toString() {
-		return String.format("UserDto [firstName=%s, lastName=%s, email=%s]", firstName, lastName, email);
+		return String.format("CustomerDto [id=%s, firstName=%s, lastName=%s, modifiedBy=%s]", id, firstName, lastName,
+				modifiedBy);
 	}
 
 }

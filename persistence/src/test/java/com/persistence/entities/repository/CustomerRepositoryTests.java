@@ -39,12 +39,13 @@ import com.persistence.entities.respository.CustomerRepository;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class CustomerRepositoryTests {
+
 	@Autowired
 	private TestEntityManager entityManager;
 
 	@Autowired
 	private CustomerRepository customers;
-	
+
 	@Test
 	public void testFindByLastName() {
 		CustomerEntity customer1 = CustomerDataset.newCustomers()[0];
@@ -58,13 +59,12 @@ public class CustomerRepositoryTests {
 		CustomerEntity customer1 = CustomerDataset.newCustomers()[0];
 		entityManager.persist(customer1);
 		Optional<CustomerEntity> findById = customers.findById(customer1.getId());
-		assertThat(findById.get()).extracting(CustomerEntity::getEmail).containsOnly(customer1.getEmail());
+		assertThat(findById.get()).extracting(CustomerEntity::getFirstName).containsOnly(customer1.getFirstName());
 	}
 
 	@Test
 	public void testCreateAccountForUser() {
-		CustomerEntity customer1 = new CustomerEntity("Redouane", "Redouane", "nameuser1", "lastname1",
-				"nameuser1@sdsad.com");
+		CustomerEntity customer1 = CustomerDataset.newCustomers()[0];
 		AccountEntity account1 = AccountDataset.newAccounts()[0];
 		customer1.setAccount(account1);
 		entityManager.persist(customer1);
@@ -76,23 +76,21 @@ public class CustomerRepositoryTests {
 
 	@Test
 	public void testCreateUserDesposit() {
-		CustomerEntity customer1  = CustomerDataset.newCustomers()[1];
+		CustomerEntity customer1 = CustomerDataset.newCustomers()[1];
 		AccountEntity accountUser = AccountDataset.newAccounts()[1];
 		customer1.setAccount(accountUser);
 		entityManager.persist(customer1);
-		
-		// deposit money
-		//retrieve user
-		Optional<CustomerEntity> userCustomer = customers.findById(customer1.getId());
-		AccountEntity accountEntity = userCustomer !=null? userCustomer.get().getAccount():null;
-		RecordEntity record = RecordDataset.newRecords()[0];
-		record.setAccount(accountEntity);
-		accountUser.addRecored(record);
-		
-		entityManager.persist(record);
-		
 
-		assertThat(userCustomer.get().getAccount().getRecords()).extracting(RecordEntity::getAmount).containsOnly(record.getAmount());
+		// deposit money
+		Optional<CustomerEntity> userCustomer = customers.findById(customer1.getId());
+		RecordEntity record = RecordDataset.newRecords()[0];
+		CustomerEntity entity = userCustomer.get();
+		entity.addRecord(record);
+
+		entityManager.merge(entity);
+
+		assertThat(userCustomer.get().getAccount().getRecords()).extracting(RecordEntity::getAmount)
+				.containsOnly(record.getAmount());
 	}
 //
 //	@Test

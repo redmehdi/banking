@@ -3,13 +3,13 @@ package com.service.entities;
 import com.service.entities.dto.CustomerDto;
 
 public interface CustomerService {
+
+	void addCustomer(final CustomerDto user);
+
+	CustomerDto findByEmail(final String email);
+
+	CustomerDto findById(final String idExt);
 	
-	void addUser(CustomerDto user);
-	
-	CustomerDto getUserDto(String name);
-	
-	boolean withdrawal(Long id, Long amount);
-	
-	boolean despositMoney(Long id, Long amount);
+	CustomerDto findByFirstLastName(final String firstName, final String lastName);
 
 }

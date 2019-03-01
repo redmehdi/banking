@@ -15,10 +15,11 @@ public final class CustomerDataset {
 	 */
 	public static CustomerEntity[] newCustomers() {
 		return new CustomerEntity[] {
-				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser1", "lastname1", "email1@smtp.com"),
-				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser2", "lastname2", "email2@smtp.com"),
-				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser3", "lastname3", "email3@smtp.com"),
-				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser4", "lastname4", "email4@smtp.com"), };
+				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser1", "lastname1"),
+				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser2", "lastname2"),
+				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser3", "lastname3"),
+				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser4", "lastname4"),
+				new CustomerEntity("TESTSYS", "TESTSYS", "nameuser4", "lastname4")};
 	}
 
 }

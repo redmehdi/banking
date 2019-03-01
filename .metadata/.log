@@ -1,0 +1,2035 @@
+!SESSION 2019-02-28 19:38:26.515 -----------------------------------------------
+eclipse.buildId=4.8.0.I20180308-0630
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jst.ws 4 0 2019-02-28 19:38:27.995
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws [446]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+       org.eclipse.wst.ws [944]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+              org.eclipse.wst.ws.parser [945]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis.consumption.core 4 0 2019-02-28 19:38:28.044
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis.consumption.core [448]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis.consumption.ui 4 0 2019-02-28 19:38:28.101
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis.consumption.ui [449]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+       org.eclipse.wst.ws [944]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+              org.eclipse.wst.ws.parser [945]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis.consumption.core; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis.consumption.core; bundle-version="1.0.550.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.axis.consumption.core [448]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+              org.eclipse.jst.ws [446]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.consumption [460]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.ui [486]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+              org.eclipse.wst.ws.explorer [806]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.ui [811]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+       org.eclipse.jst.ws.consumption.ui [462]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis.creation.ui 4 0 2019-02-28 19:38:28.171
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis.creation.ui [450]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.consumption [460]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.300,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+       org.eclipse.jst.ws.consumption.ui [462]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.ui [486]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.explorer [806]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                            org.eclipse.wst.ws.ui [811]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis.consumption.ui; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis.consumption.ui; bundle-version="1.0.900.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.axis.consumption.ui [449]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis.consumption.core; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis.consumption.core; bundle-version="1.0.550.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.axis.consumption.core [448]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis.consumption.core; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis.consumption.core; bundle-version="1.0.550.v201802222200"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis2.consumption.core 4 0 2019-02-28 19:38:28.231
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis2.consumption.core [453]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.consumption [460]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+              org.eclipse.jst.ws [446]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                     org.eclipse.wst.ws [944]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                            org.eclipse.wst.ws.parser [945]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.axis2.core [455]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.ui [486]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+              org.eclipse.wst.ws.explorer [806]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.ui [811]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.ui; bundle-version="1.0.400.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.axis2.ui [458]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+       org.eclipse.jst.ws.consumption.ui [462]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis2.consumption.ui 4 0 2019-02-28 19:38:28.275
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis2.consumption.ui [454]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.consumption.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.consumption.core; bundle-version="1.0.200.v201802222200"
+       org.eclipse.jst.ws.axis2.consumption.core [453]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.consumption [460]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                     org.eclipse.jst.ws [446]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                            org.eclipse.wst.ws [944]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                                   org.eclipse.wst.ws.parser [945]
+                                     No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.axis2.core [455]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.ui [486]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.explorer [806]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                            org.eclipse.wst.ws.ui [811]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.ui; bundle-version="1.0.400.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.axis2.ui [458]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+              org.eclipse.jst.ws.consumption.ui [462]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.ui; bundle-version="1.0.400.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis2.core 4 0 2019-02-28 19:38:28.301
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis2.core [455]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis2.creation.core 4 0 2019-02-28 19:38:28.357
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis2.creation.core [456]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+       org.eclipse.wst.ws [944]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+              org.eclipse.wst.ws.parser [945]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.consumption.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.consumption.core; bundle-version="1.0.200.v201802222200"
+       org.eclipse.jst.ws.axis2.consumption.core [453]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.consumption [460]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                     org.eclipse.jst.ws [446]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.axis2.core [455]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.ui [486]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.explorer [806]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                            org.eclipse.wst.ws.ui [811]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.ui; bundle-version="1.0.400.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.axis2.ui [458]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+              org.eclipse.jst.ws.consumption.ui [462]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis2.creation.ui 4 0 2019-02-28 19:38:28.414
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis2.creation.ui [457]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.creation.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.creation.core; bundle-version="1.0.200.v201802222200"
+       org.eclipse.jst.ws.axis2.creation.core [456]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.consumption.core
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.consumption.core; bundle-version="1.0.200.v201802222200"
+              org.eclipse.jst.ws.axis2.consumption.core [453]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+                     org.eclipse.jst.ws.consumption [460]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                            org.eclipse.jst.ws [446]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+                     org.eclipse.jst.ws.axis2.core [455]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                     org.eclipse.jst.ws.ui [486]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                            org.eclipse.wst.ws.explorer [806]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                                   org.eclipse.wst.ws.ui [811]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.ui
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.ui; bundle-version="1.0.400.v201802222200"; singleton:="true"
+                     org.eclipse.jst.ws.axis2.ui [458]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+                     org.eclipse.jst.ws.consumption.ui [462]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.consumption.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.consumption.core; bundle-version="1.0.200.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.consumption.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.consumption.ui; bundle-version="1.0.200.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.axis2.consumption.ui [454]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.consumption.core
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.consumption.core; bundle-version="1.0.200.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.ui
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.ui; bundle-version="1.0.400.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.axis2.ui 4 0 2019-02-28 19:38:28.442
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.axis2.ui [458]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.axis2.core
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.axis2.core; bundle-version="1.0.300.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.axis2.core [455]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+              org.eclipse.jst.ws [446]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                     org.eclipse.wst.ws [944]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                            org.eclipse.wst.ws.parser [945]
+                              No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.ui [486]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+              org.eclipse.wst.ws.explorer [806]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.ui [811]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.consumption 4 0 2019-02-28 19:38:28.473
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.consumption [460]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.consumption.ui 4 0 2019-02-28 19:38:28.502
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.consumption.ui [462]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.ui [486]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+              org.eclipse.jst.ws [446]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                     org.eclipse.wst.ws [944]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                            org.eclipse.wst.ws.parser [945]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+              org.eclipse.wst.ws.explorer [806]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.ui [811]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.consumption [460]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.creation.ui 4 0 2019-02-28 19:38:28.531
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.creation.ui [465]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+       org.eclipse.wst.ws.explorer [806]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+              org.eclipse.wst.ws.parser [945]
+                No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+              org.eclipse.wst.ws.ui [811]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                     org.eclipse.wst.ws [944]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+       org.eclipse.jst.ws.consumption.ui [462]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.ui [486]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.consumption [460]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.cxf.consumption.core 4 0 2019-02-28 19:38:28.553
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.cxf.consumption.core [466]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="0.4.3"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.cxf.core [468]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+              org.eclipse.jst.ws [446]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                     org.eclipse.wst.ws [944]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                            org.eclipse.wst.ws.parser [945]
+                              No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.cxf.consumption.ui 4 0 2019-02-28 19:38:28.594
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.cxf.consumption.ui [467]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.ui; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.ui; bundle-version="1.0.301.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.cxf.ui [472]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.cxf.core [468]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                     org.eclipse.jst.ws [446]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                            org.eclipse.wst.ws [944]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                                   org.eclipse.wst.ws.parser [945]
+                                     No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.consumption.core; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.consumption.core; bundle-version="1.0.400.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.cxf.consumption.core [466]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="0.4.3"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+       org.eclipse.jst.ws.consumption.ui [462]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.ui [486]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.explorer [806]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                            org.eclipse.wst.ws.ui [811]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.consumption [460]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.cxf.core 4 0 2019-02-28 19:38:28.631
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.cxf.core [468]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.cxf.creation.core 4 0 2019-02-28 19:38:28.651
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.cxf.creation.core [469]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.cxf.core [468]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.cxf.creation.ui 4 0 2019-02-28 19:38:28.693
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.cxf.creation.ui [470]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.creation.core; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.creation.core; bundle-version="1.0.500.v201802222200"
+       org.eclipse.jst.ws.cxf.creation.core [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.cxf.core [468]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.ui; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.ui; bundle-version="1.0.301.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.cxf.ui [472]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.consumption.ui; bundle-version="[1.0.0,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.consumption.ui; bundle-version="1.0.400.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.cxf.consumption.ui [467]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.ui; bundle-version="[1.0.0,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.ui; bundle-version="1.0.301.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.consumption.core; bundle-version="[1.0.0,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.consumption.core; bundle-version="1.0.400.v201802222200"; singleton:="true"
+              org.eclipse.jst.ws.cxf.consumption.core [466]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="0.4.3"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+              org.eclipse.jst.ws.consumption.ui [462]
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+                     org.eclipse.jst.ws.ui [486]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                            org.eclipse.wst.ws.explorer [806]
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                                   org.eclipse.wst.ws.ui [811]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                                -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+                     org.eclipse.jst.ws.consumption [460]
+                       Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.creation.ui; bundle-version="[1.0.305,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.creation.ui; bundle-version="1.0.950.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.creation.ui [465]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption; bundle-version="1.0.1100.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.consumption.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.consumption.ui; bundle-version="1.1.900.v201803082036"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.cxf.ui 4 0 2019-02-28 19:38:28.716
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.cxf.ui [472]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.cxf.core; bundle-version="[1.0.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.cxf.core; bundle-version="1.1.301.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.cxf.core [468]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.304,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+              org.eclipse.jst.ws [446]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                     org.eclipse.wst.ws [944]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                            org.eclipse.wst.ws.parser [945]
+                              No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.uddiregistry 4 0 2019-02-28 19:38:28.740
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.uddiregistry [485]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws.ui; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws.ui; bundle-version="1.0.600.v201802222200"; singleton:="true"
+       org.eclipse.jst.ws.ui [486]
+         Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+              org.eclipse.jst.ws [446]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                     org.eclipse.wst.ws [944]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                            org.eclipse.wst.ws.parser [945]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+              org.eclipse.wst.ws.explorer [806]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+                     org.eclipse.wst.ws.ui [811]
+                       Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                         -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jst.ws.ui 4 0 2019-02-28 19:38:28.765
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jst.ws.ui [486]
+  Unresolved requirement: Require-Bundle: org.eclipse.jst.ws; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.jst.ws; bundle-version="1.0.800.v201802222200"
+       org.eclipse.jst.ws [446]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.explorer; bundle-version="[1.0.204,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.explorer; bundle-version="1.0.950.v201802222200"; singleton:="true"
+       org.eclipse.wst.ws.explorer [806]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+              org.eclipse.wst.ws.ui [811]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.ws.explorer 4 0 2019-02-28 19:38:29.171
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.ws.explorer [806]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+       org.eclipse.wst.ws.parser [945]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.1.0,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+       org.eclipse.wst.ws.ui [811]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.ws.ui 4 0 2019-02-28 19:38:29.182
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.ws.ui [811]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+       org.eclipse.wst.ws [944]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+              org.eclipse.wst.ws.parser [945]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.wsdl.ui 4 0 2019-02-28 19:38:29.202
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.wsdl.ui [813]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.101,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+       org.eclipse.wst.ws [944]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+              org.eclipse.wst.ws.parser [945]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.ui; bundle-version="[1.0.101,1.2.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.ui; bundle-version="1.1.300.v201802222200"; singleton:="true"
+       org.eclipse.wst.ws.ui [811]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,1.2.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.wsi.ui 4 0 2019-02-28 19:38:29.217
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.wsi.ui [817]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.wsi; bundle-version="[1.0.101,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.wsi; bundle-version="1.0.600.v201805181041"; singleton:="true"
+       org.eclipse.wst.wsi [948]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+              org.eclipse.wst.ws [944]
+                Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+                  -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+                     org.eclipse.wst.ws.parser [945]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.ws 4 0 2019-02-28 19:38:29.242
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.ws [944]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+       org.eclipse.wst.ws.parser [945]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.ws.parser 4 0 2019-02-28 19:38:29.248
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.ws.parser [945]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws.parser [osgi.identity; type="osgi.bundle"; version:Version="1.0.600.v201805181041"; osgi.identity="org.eclipse.wst.ws.parser"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.wst.wsi 4 0 2019-02-28 19:38:29.259
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.wsi [948]
+  Unresolved requirement: Require-Bundle: org.eclipse.wst.ws; bundle-version="[1.0.100,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.wst.ws; bundle-version="1.1.400.v201805181041"; singleton:="true"
+       org.eclipse.wst.ws [944]
+         Unresolved requirement: Require-Bundle: org.eclipse.wst.ws.parser; bundle-version="[1.0.100,1.1.0)"
+           -> Bundle-SymbolicName: org.eclipse.wst.ws.parser; bundle-version="1.0.600.v201805181041"
+              org.eclipse.wst.ws.parser [945]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"] because it is exposed to package 'javax.wsdl' from resources javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"] and javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.6.2)(!(bundle-version>=1.7.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.6.2.v201012040545"; osgi.identity="javax.wsdl"]
+
+Chain 2:
+  org.eclipse.wst.ws [osgi.identity; type="osgi.bundle"; version:Version="1.1.400.v201805181041"; osgi.identity="org.eclipse.wst.ws"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.wsil4j)(&(bundle-version>=1.0.0)(!(bundle-version>=1.1.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.0.0.v200901211807"; osgi.wiring.bundle="org.apache.wsil4j"
+  org.apache.wsil4j [osgi.identity; type="osgi.bundle"; version:Version="1.0.0.v200901211807"; osgi.identity="org.apache.wsil4j"]
+    require: (&(osgi.wiring.bundle=javax.wsdl)(&(bundle-version>=1.4.0)(!(bundle-version>=1.6.0))))
+     |
+    provide: osgi.wiring.bundle: javax.wsdl
+  javax.wsdl [osgi.identity; type="osgi.bundle"; version:Version="1.5.1.v201012040544"; osgi.identity="javax.wsdl"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1682)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1624)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1555)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.jface 2 0 2019-02-28 19:39:02.310
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-02-28 19:39:02.310
+!MESSAGE A conflict occurred for ALT+SHIFT+G:
+Binding(ALT+SHIFT+G,
+	ParameterizedCommand(Command(com.googlecode.goclipse.debug.ui.LaunchShortcut.run,Launch Go Application,
+		Launch Go Application,
+		Category(com.googlecode.goclipse.ui.commands.Category,Goclipse Category,Goclipse commands ,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77e1b84c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.emf.codegen.ecore.ui.Generate,Generate Code,
+		Generate code for the EMF models in the workspace,
+		Category(org.eclipse.emf.codegen.ecore.ui.Commands,EMF Code Generation,Commands for the EMF code generation tools,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@12d8e6b6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-02-28 19:39:08.861
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'U:\'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2019-02-28 19:39:09.147
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: dev.eclipse.org. ; version: 2.0.7.v20170906-1327
+!STACK 0
+java.net.UnknownHostException: dev.eclipse.org
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.http.client.fluent.Request.internalExecute(Request.java:173)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:262)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:170)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:64)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)

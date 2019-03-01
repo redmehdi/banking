@@ -1,19 +1,16 @@
 // tag::sample[]
 package com.persistence.entities.impl;
 
-import java.util.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.persistence.entities.parents.EntityImpl;
+import com.persistence.entities.parents.BaseEntity;
+
+import static java.util.Objects.requireNonNull;
 
 /**
  * @author RMehdi
@@ -21,12 +18,9 @@ import com.persistence.entities.parents.EntityImpl;
  */
 @Entity
 @Table(name = "customer")
-public class CustomerEntity extends EntityImpl {
+public class CustomerEntity extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 
 	@Column(name = "FIRST_NAME")
 	private String firstName;
@@ -34,30 +28,32 @@ public class CustomerEntity extends EntityImpl {
 	@Column(name = "LAST_NAME")
 	private String lastName;
 
-	@Column(unique = true)
-	private String email;
-
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "customer")
 	private AccountEntity account;
 
-	public CustomerEntity() {
+	@SuppressWarnings("unused")
+	private CustomerEntity() {
 	}
 
-	public CustomerEntity(String createdNameBy, String modifiedNameBy, String firstName, String lastName,
-			String email) {
-		super(createdNameBy, modifiedNameBy, new Date());
+	/**
+	 * Constructor for new registration
+	 * 
+	 * @param createdNameBy
+	 * @param modifiedNameBy
+	 * @param firstName
+	 * @param lastName
+	 */
+	public CustomerEntity(final String createdNameBy, final String modifiedNameBy, final String firstName,
+			final String lastName) {
+		super(createdNameBy, modifiedNameBy);
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
 	}
 
-	public CustomerEntity(String modifiedNameBy, String firstName, String lastName, String email) {
-		this(null, modifiedNameBy, firstName, lastName, email);
-	}
-
-	@Override
-	public Long getId() {
-		return id;
+	public CustomerEntity(final String modifiedNameBy, final String firstName, final String lastName) {
+		super(modifiedNameBy);
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	public String getFirstName() {
@@ -68,10 +64,6 @@ public class CustomerEntity extends EntityImpl {
 		return lastName;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
 	public AccountEntity getAccount() {
 		return account;
 	}
@@ -80,10 +72,14 @@ public class CustomerEntity extends EntityImpl {
 		this.account = account;
 	}
 
+	public void addRecord(RecordEntity recordEntity) {
+		requireNonNull(account, "cannot add record without having an account bank");
+		this.account.addRecored(recordEntity);
+	}
+
 	@Override
 	public String toString() {
-		return String.format("CustomerEntity [id=%s, firstName=%s, lastName=%s, email=%s, accounts=%s]", id, firstName,
-				lastName, email, account);
+		return String.format("CustomerEntity [ firstName=%s, lastName=%s, accounts=%s]", firstName, lastName, account);
 	}
 
 }

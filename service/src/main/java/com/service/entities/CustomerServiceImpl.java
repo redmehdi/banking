@@ -17,25 +17,27 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	private CustomerRepository customerRepository;
-	
+
 	@Transactional
-	public void addUser(CustomerDto dto) {
+	public void addCustomer(CustomerDto dto) {
 		customerRepository.save(CustomerConverter.getUserEntity(dto));
 	}
-	
-	public CustomerDto getUserDto(String name) {
+
+	public CustomerDto findByEmail(String name) {
 		List<CustomerEntity> customerEntity = customerRepository.findByLastName(name);
-		return CustomerConverter.getUserEntity(customerEntity.get(0));
+		return CustomerConverter.getUserDto(customerEntity.get(0));
 	}
 
-	public boolean withdrawal(Long id, Long amount) {
-		// TODO Auto-generated method stub
-		return false;
+	@Override
+	public CustomerDto findById(String idExt) {
+		final List<CustomerEntity> userEntity = customerRepository.findByIdExt(idExt);
+		return !userEntity.isEmpty() ? CustomerConverter.getUserDto(userEntity.get(0)) : null;
 	}
 
-	public boolean despositMoney(Long id, Long amount) {
-		// TODO Auto-generated method stub
-		return false;
+	@Override
+	public CustomerDto findByFirstLastName(String firstName, String lastName) {
+		final List<CustomerEntity> customerEntity = customerRepository.findByFirstLastName(firstName, lastName);
+		return !customerEntity.isEmpty() ? CustomerConverter.getUserDto(customerEntity.get(0)) : null;
 	}
 
 }

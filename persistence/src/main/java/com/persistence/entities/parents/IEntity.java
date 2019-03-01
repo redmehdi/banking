@@ -2,17 +2,19 @@ package com.persistence.entities.parents;
 
 import java.io.Serializable;
 
-public interface IEntity<I1,I2,I3> extends Serializable {
+public interface IEntity<I1,I2,I3,I4> extends Serializable {
 	
 	I1 getId();
 	
-	I2 getModificationDate();
-	void setModificationDate(I2 currentDate);
+	I2 getIdExt();
 	
-	I3 getModifiedNameBy();
-	void setModifiedNameBy(I3 name);
+	I3 getModificationDate();
+	void setModificationDate(I3 currentDate);
 	
-	I2 getCreationDate();
-	I3 getCreatedNameBy();
+	I4 getModifiedNameBy();
+	void setModifiedNameBy(I4 name);
+	
+	I3 getCreationDate();
+	I4 getCreatedNameBy();
 	
 }
