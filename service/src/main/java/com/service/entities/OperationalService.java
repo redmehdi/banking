@@ -1,6 +1,7 @@
 package com.service.entities;
 
 import com.service.entities.dto.OperationalRequestDto;
+import com.service.entities.dto.OperationalResponseDto;
 import com.service.entities.dto.exception.UserAccountNotFoundException;
 
 public interface OperationalService {
@@ -9,6 +10,8 @@ public interface OperationalService {
 	
 	String withDrawal(OperationalRequestDto operationData) throws UserAccountNotFoundException;
 	
-	void deposit(OperationalRequestDto operationData);
+	void deposit(OperationalRequestDto operationData) throws UserAccountNotFoundException;
+	
+	OperationalResponseDto extractTransaction(String idExt);
 
 }

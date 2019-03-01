@@ -9,6 +9,8 @@ public class CustomerDto {
 	private String lastName;
 
 	private String modifiedBy;
+	
+	private AccountDto accountDto;
 
 	public CustomerDto(final String id, final String firstName, final String lastName, final String modifiedBy) {
 		this.id = id;
@@ -51,6 +53,14 @@ public class CustomerDto {
 
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
+	}
+	
+	public AccountDto getAccountDto() {
+		return accountDto;
+	}
+
+	public void setAccountDto(AccountDto accountDto) {
+		this.accountDto = accountDto;
 	}
 
 	@Override

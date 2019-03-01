@@ -16,26 +16,23 @@ public class OperationalRequestDto {
 
 	private String currency;
 
-	public OperationalRequestDto(String id, String email, BigDecimal amount, BigDecimal balance,
-			TransnationalTypeDto transnationalType, final String changedBy) {
-		this.idUserExt = id;
+	public OperationalRequestDto(String idUserExt, String email, BigDecimal amount, BigDecimal balance,
+			String changedBy, String currency) {
+		super();
+		this.idUserExt = idUserExt;
 		this.email = email;
 		this.amount = amount;
 		this.balance = balance;
 		this.changedBy = changedBy;
+		this.currency = currency;
 	}
 
-	public OperationalRequestDto(String email, BigDecimal amount, BigDecimal balance,
-			TransnationalTypeDto transnationalType, final String changedBy) {
-		this(null, email, amount, balance, transnationalType, changedBy);
-	}
-
-	public String getId() {
+	public String getIdUserExt() {
 		return idUserExt;
 	}
 
-	public void setId(String id) {
-		this.idUserExt = id;
+	public void setIdUserExt(String idUserExt) {
+		this.idUserExt = idUserExt;
 	}
 
 	public String getEmail() {
@@ -60,14 +57,6 @@ public class OperationalRequestDto {
 
 	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
-	}
-
-	public String getIdUserExt() {
-		return idUserExt;
-	}
-
-	public void setIdUserExt(String idUserExt) {
-		this.idUserExt = idUserExt;
 	}
 
 	public String getChangedBy() {

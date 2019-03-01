@@ -36,7 +36,7 @@ public class AccountEntity extends BaseEntity {
 
 	@Column(nullable = false)
 	private String currency;
-	
+
 	@Column(unique = true)
 	private String email;
 
@@ -44,30 +44,23 @@ public class AccountEntity extends BaseEntity {
 	private List<RecordEntity> records;
 
 	@SuppressWarnings("unused")
-	private AccountEntity() {}
+	private AccountEntity() {
+	}
 
-	public AccountEntity(
-			final String createdNameBy, 
-			final String modifiedNameBy, 
-			final BigDecimal balance,
-			final String currency,
-			final String email) {
+	public AccountEntity(final String createdNameBy, final String modifiedNameBy, final BigDecimal balance,
+			final String currency, final String email) {
 		super(createdNameBy, modifiedNameBy);
 		this.balance = balance;
 		this.currency = currency;
 		this.email = email;
 	}
 
-	public AccountEntity(
-			final String modifiedNameBy, 
-			final BigDecimal balance, 
-			final String currency,
-			final String email
-			) {
+	public AccountEntity(final String modifiedNameBy, final BigDecimal balance, final String currency,
+			final String email) {
 		super(modifiedNameBy);
 		this.balance = balance;
 		this.currency = currency;
-		this.email =email;
+		this.email = email;
 	}
 
 	public BigDecimal getBalance() {
@@ -100,5 +93,18 @@ public class AccountEntity extends BaseEntity {
 		this.customer = customer;
 	}
 
+	public void setBalance(BigDecimal balance) {
+		this.balance = balance;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("AccountEntity [customer=%s, balance=%s, currency=%s, email=%s, records=%s]", customer,
+				balance, currency, email, records);
+	}
 
 }
