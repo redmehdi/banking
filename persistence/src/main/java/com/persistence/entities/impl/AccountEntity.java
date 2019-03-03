@@ -4,6 +4,7 @@ import static javax.persistence.FetchType.LAZY;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,7 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.persistence.entities.parents.BaseEntity;
+import com.base.persistence.BaseEntity;
+import com.base.persistence.IEntity;
 
 /**
  * @author RMehdi
@@ -23,7 +25,7 @@ import com.persistence.entities.parents.BaseEntity;
  */
 @Entity
 @Table(name = "account")
-public class AccountEntity extends BaseEntity {
+public class AccountEntity extends BaseEntity implements IEntity<Long, String, Date, String> {
 
 	private static final long serialVersionUID = 1L;
 

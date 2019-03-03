@@ -3,6 +3,7 @@ package com.service.entities;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +14,17 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.persistence.entities.impl.AccountEntity;
+import com.persistence.entities.impl.CustomerEntity;
 import com.service.entities.dto.AccountDto;
 import com.service.entities.dto.CustomerDto;
-import com.service.entities.dto.OperationalRequestDto;
-import com.service.entities.dto.exception.UserAccountNotFoundException;
+import com.service.entities.dto.RecordDto;
+import com.service.entities.exception.UserAccountNotFoundException;
+import com.service.process.transactional.TransactionalService;
+import com.service.process.transactional.request.CreationUserAndAccountRequest;
+import com.service.process.transactional.request.DepositRequest;
+import com.service.process.transactional.request.WithdrawalRequest;
+import com.service.process.transactional.response.extractMovementResponse;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -26,15 +34,21 @@ import com.service.entities.dto.exception.UserAccountNotFoundException;
 public class CustomerServiceTests {
 
 	@Autowired
-	private CustomerService customerService;
+	private CustomerService<CustomerEntity, CustomerDto> customerService;
 	
 	@Autowired
-	private OperationalService operationalService;
+	private AccountService accountService;
+	
+	@Autowired
+	private RecordService recordService;
+	
+	@Autowired
+	private TransactionalService transactionalService;
 
 	@Test
 	public void testFindByLastName() {
-		customerService.addCustomer(new CustomerDto("redouane", "mehdi", "Sys"));
-
+		customerService.addOrUpdate(new CustomerDto("redouane", "mehdi", "Sys"));
+		
 		CustomerDto user = customerService.findByFirstLastName("redouane", "mehdi");
 
 		assertThat(user).extracting(CustomerDto::getLastName).containsOnly("mehdi");
@@ -42,43 +56,116 @@ public class CustomerServiceTests {
 	
 	@Test
 	public void testAddUserAndAccountCreation() {
-		customerService.addCustomer(new CustomerDto("redouane", "mehdi", "Sys"));
+		CreationUserAndAccountRequest request = new CreationUserAndAccountRequest();
+		request.setFirstName("redouane");
+		request.setLastName("mehdi");
+		request.setEmail("redouane@esei.uvigo.es");
+		request.setBalance("89654654654654");
+		request.setCurrency("USD");
+		request.setModifiedBy("AUTOTEST");
+		transactionalService.createUserAndAccount(request );
 
 		CustomerDto user = customerService.findByFirstLastName("redouane", "mehdi");
-		
-		try {
-			operationalService.createAcount(new OperationalRequestDto(user.getId(), "sadad@smpt.es", null, BigDecimal.valueOf(5421), "USD", "REDAUTHO"));
-		}
-		catch (UserAccountNotFoundException e) {
-			// TODO Auto-generated catch block
-		}
 		
 		assertThat(user).extracting(CustomerDto::getLastName).containsOnly("mehdi");
 	}
 	
 	@Test
 	public void testUserWithDrawal() {
-		customerService.addCustomer(new CustomerDto("redouane", "mehdi", "Sys"));
+		CreationUserAndAccountRequest request = new CreationUserAndAccountRequest();
+		request.setFirstName("redouane");
+		request.setLastName("mehdi");
+		request.setEmail("redouane@esei.uvigo.es");
+		request.setBalance("1000199");
+		request.setCurrency("USD");
+		request.setModifiedBy("AUTOTEST");
+		transactionalService.createUserAndAccount(request);
 
-		CustomerDto user = customerService.findByFirstLastName("redouane", "mehdi");
-		
+		CustomerDto user = customerService.findByLastName("mehdi");
+
+
+		WithdrawalRequest w = new WithdrawalRequest();
+		w.setIdUserExt(user.getId());
+		w.setChangedBy("AUTOtest");
+		w.setRequestAmount("199");
 		try {
-			operationalService.createAcount(new OperationalRequestDto(user.getId(), "sadad@smpt.es", null, BigDecimal.valueOf(5421), "USD", "REDAUTHO"));
-		}
-		catch (UserAccountNotFoundException e) {
-			// TODO Auto-generated catch block
-		}
-		
-		try {
-			operationalService.withDrawal(new OperationalRequestDto(user.getId(), "sadad@smpt.es", BigDecimal.valueOf(21), null, "USD", "REDAUTHO"));
-		}
-		catch (UserAccountNotFoundException e) {
+			transactionalService.withDrawal(w );
+		} catch (UserAccountNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		CustomerDto userEmail = customerService.findByFirstLastName("redouane", "mehdi");
+		List<AccountDto> accountDtos = accountService.findByEmail("redouane@esei.uvigo.es");	
+		assertThat(accountDtos).extracting(AccountDto::getRecord).isNotEmpty();
+	}
+	
+	@Test
+	public void testUserDeposit() {
+		CreationUserAndAccountRequest request = new CreationUserAndAccountRequest();
+		request.setFirstName("redouane");
+		request.setLastName("mehdi");
+		request.setEmail("redouane@esei.uvigo.es");
+		request.setBalance("0");
+		request.setCurrency("USD");
+		request.setModifiedBy("AUTOTEST");
+		transactionalService.createUserAndAccount(request);
+
+		CustomerDto user = customerService.findByLastName("mehdi");
+
+
+		DepositRequest w = new DepositRequest();
+		w.setIdUser(user.getId());
+		w.setChangedBy("AUTOtest");
+		w.setAmount("199");
+		try {
+			transactionalService.deposit(w );
+		} catch (UserAccountNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		assertThat(userEmail.getAccountDto()).extracting(AccountDto::getBalance).containsOnly(BigDecimal.valueOf(5400));
+		List<AccountDto> accountDtos = accountService.findByEmail("redouane@esei.uvigo.es");	
+		assertThat(accountDtos).extracting(AccountDto::getRecord).isNotEmpty();
+	}
+	
+	@Test
+	public void testUserExtractMovement() {
+		CreationUserAndAccountRequest request = new CreationUserAndAccountRequest();
+		request.setFirstName("redouane");
+		request.setLastName("mehdi");
+		request.setEmail("redouane@esei.uvigo.es");
+		request.setBalance("0");
+		request.setCurrency("USD");
+		request.setModifiedBy("AUTOTEST");
+		transactionalService.createUserAndAccount(request);
+
+		CustomerDto user = customerService.findByLastName("mehdi");
+
+
+		DepositRequest w = new DepositRequest();
+		w.setIdUser(user.getId());
+		w.setChangedBy("AUTOtest");
+		w.setAmount("199");
+		List<RecordDto> recodt2 = recordService.getAll();
+		try {
+			transactionalService.deposit(w );
+//			transactionalService.deposit(w );
+//			transactionalService.deposit(w );
+		} catch (UserAccountNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		List<RecordDto> recodt1 = recordService.getAll();
+		
+		try {
+			extractMovementResponse extract = transactionalService.extractTransaction(user.getId());
+		} catch (UserAccountNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+//		List<AccountDto> accountDtos = accountService.findByEmail("redouane@esei.uvigo.es");	
+//		assertThat(accountDtos).extracting(AccountDto::getRecord).isNotEmpty();
 	}
 }

@@ -1,28 +1,52 @@
 package com.service.entities.dto;
 
-public class RecordDto {
+import java.math.BigDecimal;
 
-	private String amount;
+import com.base.dto.IDto;
 
-	private String balance;
+public class RecordDto implements IDto {
+
+	private static final long serialVersionUID = 1L;
+
+	private String id;
+
+	private BigDecimal amount;
+
+	private BigDecimal balance;
 
 	private TransnationalTypeDto typeDto;
-	
+
 	private String changedBy;
-	
-	public String getAmount() {
+
+	public RecordDto(String id, BigDecimal amount, BigDecimal balance, TransnationalTypeDto typeDto, String changedBy) {
+		this.id = id;
+		this.amount = amount;
+		this.balance = balance;
+		this.typeDto = typeDto;
+		this.changedBy = changedBy;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public BigDecimal getAmount() {
 		return amount;
 	}
 
-	public void setAmount(String amount) {
+	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
 
-	public String getBalance() {
+	public BigDecimal getBalance() {
 		return balance;
 	}
 
-	public void setBalance(String balance) {
+	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
 	}
 
@@ -33,7 +57,7 @@ public class RecordDto {
 	public void setTypeDto(TransnationalTypeDto typeDto) {
 		this.typeDto = typeDto;
 	}
-	
+
 	public String getChangedBy() {
 		return changedBy;
 	}
@@ -44,7 +68,8 @@ public class RecordDto {
 
 	@Override
 	public String toString() {
-		return String.format("RecordDto [amount=%s, balance=%s, typeDto=%s]", amount, balance, typeDto);
+		return String.format("RecordDto [id=%s, amount=%s, balance=%s, typeDto=%s, changedBy=%s]", id, amount, balance,
+				typeDto, changedBy);
 	}
 
 }

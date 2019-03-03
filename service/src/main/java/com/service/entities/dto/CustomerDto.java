@@ -1,6 +1,10 @@
 package com.service.entities.dto;
 
-public class CustomerDto {
+import com.base.dto.IDto;
+
+public class CustomerDto implements IDto {
+
+	private static final long serialVersionUID = 1L;
 
 	private String id;
 

@@ -1,10 +1,8 @@
-D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\parents\IEntity.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\respository\AccountRepository.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\impl\CustomerEntity.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\respository\RecordRepository.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\impl\RecordEntity.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\impl\TransnationalType.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\respository\CustomerRepository.java
-D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\parents\EntityImpl.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\Application.java
 D:\workspaces\Spring\bankingApp\persistence\src\main\java\com\persistence\entities\impl\AccountEntity.java

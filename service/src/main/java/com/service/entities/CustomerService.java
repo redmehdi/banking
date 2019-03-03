@@ -1,15 +1,11 @@
 package com.service.entities;
 
-import com.service.entities.dto.CustomerDto;
+import com.base.service.IService;
 
-public interface CustomerService {
+public interface CustomerService<E, T> extends IService<E, T> {
 
-	void addCustomer(final CustomerDto user);
+	T findByLastName(final String email);
 
-	CustomerDto findByEmail(final String email);
-
-	CustomerDto findById(final String idExt);
-	
-	CustomerDto findByFirstLastName(final String firstName, final String lastName);
+	T findByFirstLastName(final String firstName, final String lastName);
 
 }

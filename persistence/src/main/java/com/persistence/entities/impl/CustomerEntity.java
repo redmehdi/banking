@@ -1,6 +1,10 @@
 // tag::sample[]
 package com.persistence.entities.impl;
 
+import static java.util.Objects.requireNonNull;
+
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.persistence.entities.parents.BaseEntity;
-
-import static java.util.Objects.requireNonNull;
+import com.base.persistence.BaseEntity;
+import com.base.persistence.IEntity;
 
 /**
  * @author RMehdi
@@ -18,7 +21,7 @@ import static java.util.Objects.requireNonNull;
  */
 @Entity
 @Table(name = "customer")
-public class CustomerEntity extends BaseEntity {
+public class CustomerEntity extends BaseEntity implements IEntity<Long, String, Date, String> {
 
 	private static final long serialVersionUID = 1L;
 
